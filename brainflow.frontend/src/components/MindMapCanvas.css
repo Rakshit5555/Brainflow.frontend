@@ -1,0 +1,137 @@
+.mindmap-container {
+  width: 100%;
+  /* height: 100vh; */
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.floating-controls {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+}
+
+.control-button {
+  background-color: #ff6f61;
+  border: none;
+  padding: 12px 18px;
+  color: white;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.control-button:hover {
+  background-color: #ff4b3a;
+  transform: translateY(-2px);
+}
+
+.react-flow__node-editableNode {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  color: #444;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.react-flow__node-textNode {
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.react-flow__node-editableNode .node-input,
+.react-flow__node-textNode .node-input {
+  font-size: 16px;
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__node-selected {
+  border-color: blue;
+  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
+}
+
+.reactflow__controls {
+  background-color: #fff0f0 !important;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.reactflow__background {
+  background-image: url('https://www.transparenttextures.com/patterns/white-waves.png');
+  background-size: 400px 400px;
+  background-color: #fffbf0;
+}
+
+.reactflow__controls-button {
+  background-color: #ff6f61 !important;
+  color: white !important;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.reactflow__controls-button:hover {
+  background-color: #ff4b3a !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* Floating controls for smaller screens */
+  .floating-controls {
+    flex-direction: row;
+    top: auto; /* Move to the bottom */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+  }
+
+  .control-button {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 30px;
+  }
+
+  /* Node and text styling adjustments */
+  .react-flow__node-editableNode,
+  .react-flow__node-textNode {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .react-flow__node-editableNode .node-input,
+  .react-flow__node-textNode .node-input {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  /* Ensure the mindmap container fits the smaller screen sizes */
+  .mindmap-container {
+    height: 100%;
+  }
+
+  /* Adjust the React Flow controls for mobile */
+  .reactflow__controls {
+    padding: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}

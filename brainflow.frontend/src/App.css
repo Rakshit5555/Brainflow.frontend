@@ -1,0 +1,71 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container for the app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: sticky; /* Sticks to the top */
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top */
+  width: 100%; /* Full width */
+}
+
+/* Main content area */
+.main-content {
+  display: flex;
+  flex: 1; /* Takes up remaining space */
+  overflow: hidden;
+  width: 100%; /* Full width */
+}
+
+/* MindMapCanvas styling */
+.mindmap-canvas {
+  flex: 1; /* Flexible width */
+  min-width: 0; /* Allows it to shrink */
+  overflow: auto;
+  padding: 10px;
+  background-color: #f4f4f4; /* Background color */
+}
+
+/* NotesSection styling */
+.notes-section {
+  flex: 0 0 20%; /* Fixed width of 20% */
+  overflow: auto;
+  padding: 10px;
+  background-color: #fff; /* Background color */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Stack components vertically on smaller screens */
+  }
+
+  .mindmap-canvas, .notes-section {
+    flex: none; /* Remove flex properties */
+    height: 50vh; /* Adjust height for mobile */
+    width: 100%; /* Full width */
+  }
+
+  .notes-section {
+    flex: none; /* Remove flex properties */
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Adjust height for mobile */
+  }
+}

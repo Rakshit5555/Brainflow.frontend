@@ -1,0 +1,130 @@
+/* Fullscreen container with a flex layout to split the screen */
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  /* Left side for quote */
+  .left-side {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Catchy quote styling with beautiful calligraphy */
+  .left-side .quote {
+    font-size: 2rem;
+    font-family: "Playfair Display", serif; /* Calligraphy-like font */
+    font-weight: 400;
+    color: #333;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  
+  /* Right side for login */
+  .right-side {
+    flex: 0.35; /* Adjust for 35% screen width */
+    background: linear-gradient(135deg, #f8f8f8, #eaeaea);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  /* Login title */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Input fields container */
+  .login-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Minimalistic input fields with subtle shadow */
+  .login-fields input {
+    margin-bottom: 20px;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    background-color: #fdfdfd;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .login-fields input:focus {
+    border: 1px solid #007aff;
+    outline: none;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button styling */
+  .login-button {
+    padding: 16px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Error and success messages */
+  .error-message, .success-message {
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+  
+  .error-message {
+    color: #ff3b30;
+  }
+  
+  .success-message {
+    color: #4cd964;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .left-side {
+      display: none;
+    }
+    
+    .right-side {
+      flex: 1;
+      width: 100vw;
+    }
+  
+    .login-fields input, .login-button {
+      padding: 12px;
+    }
+  
+    .login-button {
+      font-size: 0.9rem;
+    }
+  }
+  
